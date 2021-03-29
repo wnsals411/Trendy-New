@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NOTICE</title>
+        <style>
+           body {
+            margin: 0 auto;
+        }
+
+        #wrap {
+            display: flex;
+        }
+
+        #nav {
+            min-width: 320px;
+            width: 320px;
+            flex-direction: column;
+            padding-left: 0;
+            background: #2b74bf;
+            font-size: 50px;
+            font-family: "Impact";
+            color: rgb(248, 243, 243);
+            z-index: 12;
+        }
+
+        #subnav {
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+        }
+        #nav h3 {
+            margin: 0;
+            text-align: center;
+            padding-top: 40px;
+            letter-spacing: 8px;
+        }
+
+        #subnav h5:first-child {
+            padding-top: 20px;
+        }
+
+        #subnav h5 {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        #subnav a:first-child {
+            padding-top: 20px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #subnav a {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #susubnav h6 {
+            margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+        }
+        .thirdNav a,
+        .thirdNav img {
+            background: #1c5294;
+            position: relative;
+        }
+
+        #susubnav {
+            clear: both;
+        }
+
+        .thirdNav a {
+            padding-top: 10px !important;
+        }
+
+        .thirdNav img {
+            vertical-align: middle;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        .write{
+            width:700px;
+            height:900px;
+            margin:auto;
+        }
+        .write_head{
+            text-align: center;
+            font-size:24px;
+            font-weight: bold;
+            padding-bottom: 30px;
+        }
+        .filed_title{
+            font-size:30px;
+            font-weight: bold;
+        }
+        .title,
+        .author,
+        .content,
+        .password{
+            font-size:35px;
+            text-indent: 5px;
+            margin-left: 8px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px 0.42px rgba(0, 0, 0, 0.35);
+        }
+        .fieldWrapper{
+            padding-top:30px;
+        }
+        .main_title{ 
+            font-size:65px;
+        }
+        .btn_div{
+            text-align: center;
+            padding-top:60px;
+        }
+        .write_btn,
+        .write_btn2{
+            width:330px;
+            height:40px;
+            background-color: rgb(90, 137, 184);
+            color:white;
+            border-radius: 5px;
+            font-size:16px;
+            border:white;
+            cursor: pointer;
+        }
+        .write_btn{
+            margin-right: 20px;
+        }
+        
+        </style>
+    </head>
+    <body>
+<!-- 전체 페이지 -->
+<div id="wrap">
+    <!--좌측 네비게이션 : 파란색 -->
+    <div id="nav">
+        <h3>TRENDY</h3>
+        <div id="subnav">
+            <a href="{% url 'main:main' %}" class="subNav01">MAIN</a>
+            <a href="{% url 'info:main' %}">INFO</a>
+            <div class="thirdNav">
+                <a href="{% url 'notice:main' %}" id="selected">NOTICE
+                    <img src="../down-arrow.png">
+                </a>
+            </div>
+        </div>
+        <div id="susubnav">
+            <a href="{% url 'notice:notice' %}" class="susubNav01">Notice</a>
+            <!--이곳-->
+            <a href="{% url 'notice:qna' %}">Q&A</a>
+            <!--이곳-->
+        </div>
+        <div id="footer" style="text-align: center; margin-top: 500px;">
+            <h6 style="font-size: 16px; font-weight: normal;">
+                Tel. 02-1234-5678
+                <p>Adr. Gangnam-gu, Seoul 1234</p>
+                <p>ⓒTRENDY. CopyRight Trendy</p>
+            </h6>
+        </div>
+    </div>
+    <div class="write">
+    <form action="{% url 'notice:write' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="write_head">
+            <label class = "main_title">글쓰기</label>
+        </div>
+        <div class="write_body">
+            {% for filed in form %}
+            <div class="fieldWrapper">
+                <label class="filed_title">{{ filed.label_tag }}</label>
+                 {{ filed }}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="btn_div">
+            <input type=button value="List" OnClick="window.location='/notice/qna'" class="write_btn">
+            <input type="submit" value="OK" class="write_btn2">
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

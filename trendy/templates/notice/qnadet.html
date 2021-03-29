@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NOTICE</title>
+        <style>
+           body {
+            margin: 0 auto;
+        }
+
+        #wrap {
+            display: flex;
+        }
+
+        #nav {
+            min-width: 320px;
+            width: 320px;
+            flex-direction: column;
+            padding-left: 0;
+            background: #2b74bf;
+            font-size: 50px;
+            font-family: "Impact";
+            color: rgb(248, 243, 243);
+            z-index: 12;
+        }
+
+        #subnav {
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+        }
+        #nav h3 {
+            margin: 0;
+            text-align: center;
+            padding-top: 40px;
+            letter-spacing: 8px;
+        }
+
+        #subnav h5:first-child {
+            padding-top: 20px;
+        }
+
+        #subnav h5 {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        #subnav a:first-child {
+            padding-top: 20px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #subnav a {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #susubnav h6 {
+            margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+        }
+        .thirdNav a,
+        .thirdNav img {
+            background: #1c5294;
+            position: relative;
+        }
+
+        #susubnav {
+            clear: both;
+        }
+
+        .thirdNav a {
+            padding-top: 10px !important;
+        }
+
+        .thirdNav img {
+            vertical-align: middle;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        .notdet_head{
+            margin:auto;
+            text-align: center;
+            font-size:45px;
+            font-weight: bold;
+            padding-bottom: 50px;
+        }
+        .notdet{
+            width:700px;
+            height:900px;
+            margin:auto;
+        }
+        .notdet_btn{
+            padding-top: 70px;
+            text-align: center;
+        }
+        .btn1,
+        .btn2{
+              width:330px;
+            height:40px;
+            background-color: rgb(90, 137, 184);
+            color:white;
+            border-radius: 5px;
+            font-size:16px;
+            border:white;
+            cursor: pointer;
+            width:250px;
+        }
+        .btn1{
+            margin-right: 20px;
+        }
+        .body_content{
+            padding: 15px;
+            font-size:22px;
+        }
+        .body_content div{
+            display: inline-block;
+        }
+        .body_content div:first-child{
+            width:100px;
+        }
+        .body_content div:nth-child(2){
+            width:400px; 
+        }
+        .content_title{
+            font-weight: bold;
+            font-size:22px;
+        }
+        .content_body{
+            font-size:20px;
+        }
+        .pass_value{
+            width:150px;
+            height:30px;
+            font-size:15px;
+        }
+        .del_btn{
+            
+            width:80px;
+            height:36px;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 전체 페이지 -->
+<div id="wrap">
+    <!--좌측 네비게이션 : 파란색 -->
+    <div id="nav">
+        <h3>TRENDY</h3>
+        <div id="subnav">
+            <a href="{% url 'main:main' %}" class="subNav01">MAIN</a>
+            <a href="{% url 'info:main' %}">INFO</a>
+            <div class="thirdNav">
+                <a href="{% url 'notice:main' %}" id="selected">NOTICE
+                    <img src="../down-arrow.png">
+                </a>
+            </div>
+        </div>
+        <div id="susubnav">
+            <a href="{% url 'notice:notice' %}" class="susubNav01">Notice</a>
+            <!--이곳-->
+            <a href="{% url 'notice:qna' %}">Q&A</a>
+            <!--이곳-->
+        </div>
+        <div id="footer" style="text-align: center; margin-top: 500px;">
+            <h6 style="font-size: 16px; font-weight: normal;">
+                Tel. 02-1234-5678
+                <p>Adr. Gangnam-gu, Seoul 1234</p>
+                <p>ⓒTRENDY. CopyRight Trendy</p>
+            </h6>
+        </div>
+    </div>
+    <div class="notdet">
+        <div class="notdet_head">
+            <label>Q&A</label>
+        </div>
+        <div class="notdet_body">
+            <div class=body_content><div class=content_title>제목</div><div class=content_body>{{qna.title}}</div></div>
+            <div class=body_content><div class=content_title>작성자</div><div class=content_body>{{qna.author}}</div></div>
+            <div class=body_content><div class=content_title>내용</div><div class=content_body>{{qna.content}}</div></div>
+            {% if qna.image %} <div class=body_content><div class=content_title>이미지</div> <div class=content_body><img src ="{{ qna.image.url }}" alt = "{{qna.image}}">  {{qna.image}}</div> {% endif %}</div>
+            <div class=body_content><div class=content_title>조회수</div><div class=content_body>{{qna.hits}}</div></div>
+            <div class=body_content><div class=content_title>등록일</div><div class=content_body>{{qna.create_at}}</div></div>
+            <div class=body_content><form name=searchf method='post' action="{% url 'notice:qnadel' qna.id %}">
+                {% csrf_token %}
+            <input type='password'class = "pass_value" placeholder = ' 글 작성시 비밀번호' name='password' size=13 maxlength=20>
+            <input type=submit class= "del_btn"value="삭제"></div>
+            <div class="notdet_btn">
+                <input type=button class = "btn1" value="List" OnClick="window.location='/notice/qna'">
+                <input type=button class = "btn2"value="Main" OnClick="window.location='/notice'">
+            </div>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        </div>
+</div>    
+</div>
+</body>
+</html>

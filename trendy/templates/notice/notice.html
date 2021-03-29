@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NOTICE</title>
+        <style>
+           body {
+            margin: 0 auto;
+        }
+
+        #wrap {
+            display: flex;
+        }
+
+        #nav {
+            min-width: 320px;
+            width: 320px;
+            flex-direction: column;
+            padding-left: 0;
+            background: #2b74bf;
+            font-size: 50px;
+            font-family: "Impact";
+            color: rgb(248, 243, 243);
+            z-index: 12;
+        }
+
+        #subnav {
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+        }
+        #nav h3 {
+            margin: 0;
+            text-align: center;
+            padding-top: 40px;
+            letter-spacing: 8px;
+        }
+
+        #subnav h5:first-child {
+            padding-top: 20px;
+        }
+
+        #subnav h5 {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        #subnav a:first-child {
+            padding-top: 20px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #subnav a {
+            margin: 0;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            letter-spacing: 5px;
+            display: block;
+            font-size: 48px;
+            font-family: "KoreanSNMB";
+            color: rgb(248, 243, 243);
+            text-decoration: none;
+        }
+
+        #susubnav h6 {
+            margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+        }
+        .thirdNav a,
+        .thirdNav img {
+            background: #1c5294;
+            position: relative;
+        }
+
+        #susubnav {
+            clear: both;
+        }
+
+        .thirdNav a {
+            padding-top: 10px !important;
+        }
+
+        .thirdNav img {
+            vertical-align: middle;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        .body1{
+            width:700px;
+            height:900px;
+            margin:auto;
+        }
+        .qna_title{
+            text-indent: 5px;
+            font-size:24px;
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
+        .table th{
+            font-size:16px;
+            font-weight: bold;
+        }
+        .text_center td{
+            font-size:16px;
+            font-weight:bold;
+        }
+        .bold_td{
+            font-size:20px;
+            font-weight:bold;
+            text-align:center;
+            height:40px;
+        }
+        .second_Td a{
+            text-decoration-line: none;
+            color:black;
+
+        }
+        .qna_table td{
+            border-bottom:1px solid lightgray;
+        }
+        .write_btn{
+            width:150px;
+            height:40px;
+            background-color: rgb(90, 137, 184);
+            color:white;
+            border-radius: 5px;
+            font-size:16px;
+            border:white;
+            cursor: pointer;
+        }
+        .button_content{
+           
+            text-align:right;
+            padding-top:10px;
+        }
+        .result{
+            float:left;
+        }
+        .col{
+            display: inline-block;
+        }
+        .btn_btn-sm{
+            width:80px;
+            height:30px;
+            background-color: rgb(90, 137, 184);
+            color:white;
+            border-radius: 5px;
+            font-size:16px;
+            border:white;
+            cursor: pointer;
+        }
+        .pagination li{
+            display: inline-block;
+        }
+        .page_content{
+            
+            text-align: center;
+        }
+        .page_content a {
+            text-decoration-line: none;
+            color:black;
+            padding:0 10px ;
+        }
+        .page_content a:hover{
+            text-decoration-line: underline;
+        } 
+        </style>
+        </head>
+        <body>
+            <body>
+                <div id="wrap">
+                <div id="nav">
+            <h3>TRENDY</h3>
+            <div id="subnav">
+                <a href="{% url 'main:main' %}" class="subNav01">MAIN</a>
+                <a href="{% url 'info:main' %}">INFO</a>
+                <div class="thirdNav">
+                    <a href="{% url 'notice:main' %}" id="selected">NOTICE
+                        <img src="{% static 'down-arrow.png' %}">
+                    </a>
+                </div>
+            </div>
+            <div id="susubnav">
+                <a href="{% url 'notice:notice' %}" class="susubNav01">Notice</a>
+                <!--이곳-->
+                <a href="{% url 'notice:qna' %}">Q&A</a>
+                <!--이곳-->
+            </div>
+            <div id="footer" style="text-align: center; margin-top: 500px;">
+                <h6 style="font-size: 16px; font-weight: normal;">
+                    Tel. 02-1234-5678
+                    <p>Adr. Gangnam-gu, Seoul 1234</p>
+                    <p>ⓒTRENDY. CopyRight Trendy</p>
+                </h6>
+            </div>
+        </div>
+        <div class=body1>
+<!-- templates/notice/notice_list.html -->
+<div class=qna_title><label>공지사항 -- {{Total}}개</label></div>
+<div style="margin-top: 30px;">
+    <form action="" method="GET">
+        <div class="col">
+            <div style="float: right;" class="form-row">
+                <div class="form-row">
+                    <div class="col" style="margin-top: 10px;">
+                        <select style="width: 6em; height: 2em;" class="custom-select custom-select-md" name="type">
+                            <option value="all">전체</option>
+                            <option value="title">제목</option>
+                            <option value="content">내용</option>                            
+                        </select>
+                    </div>
+                    <div class="col" style="margin-top: 10px;">
+                        <input type="text" name="q" value="{{ q }}" class="form-control form-control-md"
+                            style="width: 15em; height: 1.6em;" placeholder="검색어를 입력해주세요.">
+                    </div>
+                    <div class="col">
+                        <!-- <button class="btn btn-md btn-outline-dark" type="submit">검색</button> -->
+                        <button class="btn_btn-sm" type="submit" id="search_btn">검색</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table cellspacing=1 width=700  class = "qna_table">
+    <thead class="qna_thead">
+        <tr class="text-center">
+            <th class  ="bold_td" width=50>번호</th>
+            <th class  ="bold_td" width=320>제목</th>
+            <th class  ="bold_td" width=100>작성자</th>
+            <th class  ="bold_td" width=100>등록일</th>
+            <th class  ="bold_td" width=100>조회수</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if notice_list %}
+        {% for notice in notice_list %}
+        <tr class="text-center">
+            <td class = "second_Td"><p align=center><a href="{% url 'notice:notdet' notice.id %}">{{ notice.id }}</p></td>
+            <td class = "second_Td"><p align=center><a href="{% url 'notice:notdet' notice.id %}">{{ notice.title|truncatechars:30 }}</p></td>
+            <td class = "second_Td"><p align=center>관리자</p></td>
+            <td class = "second_Td"><p align=center>{{ notice.create_at|date:'Y. m. d' }}</p></td>
+            <td class = "second_Td"><p align=center>{{ notice.hits }}</p></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr class="text-center">
+            <td colspan="5">
+                작성된 게시글이 없습니다.
+            </td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+
+{% if is_paginated %}
+<div class = "page_content">
+<ul class="pagination">
+    <li>
+        <a class="page-link" href="?type={{ type }}&q={{ q }}&page=1"><<</a>
+    </li>
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="?type={{ type }}&q={{ q }}&page={{ page_obj.previous_page_number }}"
+            tabindex="-1">이전</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1"><</a>
+    </li>
+    {% endif %}
+
+    {% for page in page_range %}
+    <li class="page-item {% if page == page_obj.number %} activate {% endif %}">
+        <a class="page-link" href="?type={{ type }}&q={{ q }}&page={{ page }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+        <a class="page-link"
+            href="?type={{ type }}&q={{ q }}&page={{ page_obj.next_page_number }}">></a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link" href="#">다음</a>
+    </li>
+    {% endif %}
+    <li>
+        <a class="page-link" href="?type={{ type }}&q={{ q }}&page={{ page_obj.paginator.num_pages }}">>></a>
+    </li>
+</ul>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
