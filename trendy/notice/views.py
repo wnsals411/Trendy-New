@@ -35,7 +35,7 @@ class QnaListView(ListView): # 게시글
                     search_qna_list = qna_list.filter(title__icontains=search_keyword)    
                 elif search_type == 'content':
                     search_qna_list = qna_list.filter(content__icontains=search_keyword)    
-                elif search_type == 'author':
+                else:
                     search_qna_list = qna_list.filter(author__icontains=search_keyword)
 
                 return search_qna_list

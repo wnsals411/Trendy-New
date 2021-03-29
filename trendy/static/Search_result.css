@@ -1,0 +1,59 @@
+body{
+margin: 0 auto;
+}
+#contents{
+position: relative;
+}
+#topCon{
+display: flex;
+background: #2b74bf;
+}
+#logo{
+font-size: 60px;
+font-family: Impact;
+margin-left: 100px;
+margin-bottom: 35px;
+margin-top: 35px;
+text-decoration: none;
+color: #f1ecec;
+}
+#searchbar{
+height: 25px;
+width: 810px;
+margin-top: 55px;
+padding: 10px;
+border: 0;
+background: #f1ecec;
+text-align: center;
+margin-left: 20%;
+border-radius: 5px;
+}
+#mainCon{
+border-top: 2px solid rgb(204, 204, 204);
+}
+#result{
+background: white;
+width: 500px;
+min-height: 850px;
+}
+#footer{
+border-top: 2px solid rgb(204, 204, 204);
+margin-bottom: 0px;
+background: #2b74bf;
+}
+#footer p{
+font-size: 13px;
+font-family: NanumSquareround;
+text-align: center;
+margin-bottom: 0px;
+margin-top: 8px;
+color: white;
+}
+#footer h3{
+font-family: Impact;
+font-size: 33px;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 0px;
+color: white;
+}
