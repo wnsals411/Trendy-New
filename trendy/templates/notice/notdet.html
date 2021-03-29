@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -163,7 +164,7 @@
             <a href="{% url 'info:main' %}">INFO</a>
             <div class="thirdNav">
                 <a href="{% url 'notice:main' %}" id="selected">NOTICE
-                    <img src="../down-arrow.png">
+                    <img src="{% static 'down-arrow.png' %}">
                 </a>
             </div>
         </div>
