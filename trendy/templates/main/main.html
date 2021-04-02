@@ -153,6 +153,13 @@
 </head>
 <body>
 <!-- 전체 페이지 -->
+
+<!-- git add 안될때 명령어
+
+    git config --global core.autocrlf true 
+
+-->
+
 <div id="wrap">
     <!--좌측 네비게이션 : 파란색 -->
     <div id="nav">
@@ -174,16 +181,19 @@
             <div id="contents" style="position: relative;">
                 <div id="topCon"></div>
 
+                <!-- ↓이곳이 검색창 스크립트 코드↓ -->
                 <script async src="https://cse.google.com/cse.js?cx=8332e3eec3cc6e5e3"></script>
                 <div class="gcse-searchbox-only"></div>
+                <!-- ↑이곳이 검색창 스크립트 코드↑ -->
 
-                <input type="text" placeholder="검색어를 입력하세요." style="padding: 10px;border: 0;background: #d8dfe5;
+                <!-- ↓ 이곳이 기존 검색창 ↓ -->
+                <!-- <input type="text" placeholder="검색어를 입력하세요." style="padding: 10px;border: 0;background: #d8dfe5;
                 width: 810px;text-align: center;margin: 0 auto;position: absolute;top: 35px;left: 20%;border-radius: 5px;">
                 <button type= "submit" id="search_btn" onclick="window.location='/search/'">
                     <span class="blind">검색</span>
                     <span class="icon"></span>
-                </button>
-
+                </button> -->
+                <!-- ↑ 이곳이 기존 검색창 ↑ -->
                 
 
             </div>
