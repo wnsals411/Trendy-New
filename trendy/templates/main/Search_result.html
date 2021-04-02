@@ -12,19 +12,28 @@
 <div id="wrap">
     <div id="container">
         <div id="contents">
-            <div id="topCon">
-                <!--Trendy logo 클릭 시 MAIN page로 back-->
-            <a href="{% url 'main:main' %}" id="logo">TRENDY</a>
-                <!--우선은 search_result html제작. 이 검색결과 창에서 다른 검색어를 입력시 넘어갈 페이지는 back에서 검색엔진을
-                연동 시켜본 후 추후 수정 예정-->
-                <input id="searchbar" type="text" name="search"
-                       autocomplete="off" placeholder="검색단어 결과" />
-            </div>
+                <div id="topCon">
+                    <!--Trendy logo 클릭 시 MAIN page로 back-->
+                    <a href="{% url 'main:main' %}" id="logo">TRENDY</a>
+                    <!--우선은 search_result html제작. 이 검색결과 창에서 다른 검색어를 입력시 넘어갈 페이지는 back에서 검색엔진을 연동 시켜본 후 추후 수정 예정-->
+                    
+                    <!-- ↓이곳이 검색창 코드↓ -->
+                    <form action="" method="GET">
+                        <input id= "searchbar" type="text" name="q" value="{{ q }}"  placeholder="검색어를 입력해주세요.">
+                        <button type="submit" id="search_btn">검색</button>
+                    </form>
+                    <!-- ↑이곳이 검색창 코드↑ -->
+
+                </div>
             <div id="mainCon">
-            <div id="result">
-                <!--검색 결과 웹 크롤링?-->
-                
-            </div>
+                <div id="result">
+
+                    <!-- ↓이곳이 검색결과 스크립트 코드↓ -->
+                    <script async src="https://cse.google.com/cse.js?cx=8332e3eec3cc6e5e3"></script>
+                    <div class="gcse-searchresults-only"></div>
+                    <!-- ↑이곳이 검색결과 스크립트 코드↑ -->
+                    
+                </div>
             </div>
             <div id="footer">
                 <h3>TRENDY</h3>

@@ -173,12 +173,19 @@
         <div id="container">
             <div id="contents" style="position: relative;">
                 <div id="topCon"></div>
+
+                <script async src="https://cse.google.com/cse.js?cx=8332e3eec3cc6e5e3"></script>
+                <div class="gcse-searchbox-only"></div>
+
                 <input type="text" placeholder="검색어를 입력하세요." style="padding: 10px;border: 0;background: #d8dfe5;
                 width: 810px;text-align: center;margin: 0 auto;position: absolute;top: 35px;left: 20%;border-radius: 5px;">
-                <button id="search_btn">
+                <button type= "submit" id="search_btn" onclick="window.location='/search/'">
                     <span class="blind">검색</span>
                     <span class="icon"></span>
                 </button>
+
+                
+
             </div>
             <div id="mainCon">
                 <div id="live">
@@ -196,6 +203,13 @@
                     </div>
                     <div id="liveBox02">
                         <h2 class="text01">자체 제작 실검자리</h2>
+
+                        <!-- ↓실시간 순위 키워드 --- 횟수↓ -->
+                        {% for list in Rank %}
+                        {{list.keyword}}---{{list.hits}}</br>
+                        {% endfor %}
+                        <!-- ↑실시간 순위 키워드 --- 횟수↑ -->
+
                     </div>
                 </div>
                 <div id="notice" style="
