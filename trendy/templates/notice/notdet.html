@@ -189,7 +189,7 @@
         <div class="notdet_body">
             <div class=body_content><div class=content_title>제목</div><div class=content_body>{{notice.title}}</div></div>
             <div class=body_content><div class=content_title>작성자</div><div class=content_body>관리자</div></div>
-            <div class=body_content><div class=content_title>내용</div><div class=content_body>{{notice.content}}</div></div>
+            <div class=body_content><div class=content_title>내용</div><div class=content_body><pre>{{notice.content}}</pre></div></div>
             {% if notice.image %} <div class=body_content><div class=content_title>이미지</div> <div class=content_body><img src ="{{ notice.image.url }}" alt = "{{notice.image}}"> </br> {{notice.image}}</div> {% endif %}</div>
             <div class=body_content><div class=content_title>조회수</div><div class=content_body>{{notice.hits}}</div></div>
             <div class=body_content><div class=content_title>등록일</div><div class=content_body>{{notice.create_at}}</div></div>

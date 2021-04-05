@@ -199,7 +199,7 @@
         <div class="notdet_body">
             <div class=body_content><div class=content_title>제목</div><div class=content_body>{{qna.title}}</div></div>
             <div class=body_content><div class=content_title>작성자</div><div class=content_body>{{qna.author}}</div></div>
-            <div class=body_content><div class=content_title>내용</div><div class=content_body>{{qna.content}}</div></div>
+            <div class=body_content><div class=content_title>내용</div><div class=content_body><pre>{{qna.content}}</pre></div></div>
             {% if qna.image %} <div class=body_content><div class=content_title>이미지</div> <div class=content_body><img src ="{{ qna.image.url }}" alt = "{{qna.image}}">  </br>{{qna.image}}</div> {% endif %}</div>
             <div class=body_content><div class=content_title>조회수</div><div class=content_body>{{qna.hits}}</div></div>
             <div class=body_content><div class=content_title>등록일</div><div class=content_body>{{qna.create_at}}</div></div>
