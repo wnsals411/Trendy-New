@@ -33,8 +33,9 @@ border-top: 2px solid rgb(204, 204, 204);
 }
 #result{
 background: white;
-width: 500px;
+width: 1700px;
 min-height: 850px;
+margin: auto;
 }
 #footer{
 border-top: 2px solid rgb(204, 204, 204);
