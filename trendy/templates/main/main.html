@@ -244,9 +244,9 @@
                         <!--td : 임시데이터 -> 백에서 연결 요청함.-->
                         {% for notice in HotQNA %}
                         <tr style="border-bottom: 1px solid rgb(222, 217, 217);">
-                            <td><a href="{% url 'notice:notdet' notice.id %}"
+                            <td><a href="{% url 'notice:qnadet' notice.id %}"
                                 class="notice-a">{{notice.id}}</td>
-                            <td><a href="{% url 'notice:notdet' notice.id %}"
+                            <td><a href="{% url 'notice:qnadet' notice.id %}"
                                 class="notice-a">{{notice.title}}</td>
                             <td>{{notice.author}}</td>
                             <td>{{notice.create_at|date:'Y. m. d' }}</td>
