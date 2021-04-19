@@ -212,13 +212,25 @@
                                 height:361px;"></iframe>-->
                     </div>
                     <div id="liveBox02">
-                        <h2 class="text01">자체 제작 실검자리 -- 배포테스트</h2>
+                        <h3 style="margin: 0 auto; color: #1a4b7e; font-size: 19pt;
+                        border-bottom: 2px solid #2b74bf;">실시간 검색어</h3>
+                        <table style ="width: 100%;">
+                            <tr style="border-bottom: 2px solid rgb(204, 204, 204);">
+                                <th>순위</th>
+                                <th>검색어</th>
+                                <th>검색횟수</th>
+                                                                
+                            </tr>
+                            <!--td : 임시데이터 -> 백에서 연결 요청함.-->
+                            {% for list in Rank %}
+                            <tr style="border-bottom: 1px solid rgb(222, 217, 217);">
+                                <td>{{forloop.counter}}</td>
+                                <td>{{list.keyword}}</td>
+                                <td>{{list.hits}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
 
-                        <!-- ↓실시간 순위 키워드 --- 횟수↓ -->
-                        {% for list in Rank %}
-                        {{list.keyword}}---{{list.hits}}</br>
-                        {% endfor %}
-                        <!-- ↑실시간 순위 키워드 --- 횟수↑ -->
 
                     </div>
                 </div>
