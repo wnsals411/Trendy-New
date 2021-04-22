@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <title>NOTICE</title>
         <style>
-           body {
+        body {
             margin: 0 auto;
         }
 
@@ -100,7 +100,6 @@
             right: 30px;
         }
         .body1{
-            width:700px;
             height:900px;
             margin:auto;
         }
@@ -143,7 +142,7 @@
             cursor: pointer;
         }
         .button_content{
-           
+
             text-align:right;
             padding-top:10px;
         }
@@ -167,7 +166,7 @@
             display: inline-block;
         }
         .page_content{
-            
+
             text-align: center;
         }
         .page_content a {
@@ -177,8 +176,78 @@
         }
         .page_content a:hover{
             text-decoration-line: underline;
-        } 
+        }
         </style>
+      <style>
+.body1{
+	position: relative;
+	margin-top: 0px;
+}
+.susubNav01{
+	    margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+            text-decoration: none;
+        }
+#susubnav a{
+	    margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+            text-decoration: none;
+        }
+.topCon{
+    background: white;
+    width: 1578px;
+    height: 111px;
+}
+
+.topCon h5{
+font-size: 72px;
+    font-family: Impact;
+    color: rgb(43, 116, 191);
+    background: white;
+    margin-bottom: 0px;
+    margin-top: 64px;
+    margin-left: 600px;
+    letter-spacing: 14px;
+}
+.list{
+    border-radius: 5px;
+    background-color: rgb(248,243,243);
+    box-shadow: 0px 10px 6.58px 0.42px rgb(0 0 0 / 35%);
+    width: 1500px;
+    height: 753px;
+    margin-left: 37px;
+}
+
+.bold_td{
+    font-size: 22px;
+    color: rgb(43,116,191);
+    text-align: center;
+}
+
+.qna_title {
+	text-align: center;
+}
+
+.qna_table{
+    width: 100%;
+    padding-top: 50px;
+    font-size: 19px;
+}
+
+.col{
+     margin-top: 30px;
+     float: right;
+     margin-right: 30px;
+}
+      </style>
         </head>
         <body>
             <body>
@@ -208,9 +277,11 @@
                 </h6>
             </div>
         </div>
-        <div class=body1>
+<div class=body1>
+  <div class="topCon">
+     <h5>NOTICE LIST</h5></div>
 <!-- templates/notice/notice_list.html -->
-<div class=qna_title><label>공지사항 -- {{Total}}개</label></div>
+<div class=qna_title></div>
 <div style="margin-top: 30px;">
     <form action="" method="GET">
         <div class="col">
@@ -220,7 +291,7 @@
                         <select style="width: 6em; height: 2em;" class="custom-select custom-select-md" name="type">
                             <option value="all">전체</option>
                             <option value="title">제목</option>
-                            <option value="content">내용</option>                            
+                            <option value="content">내용</option>
                         </select>
                     </div>
                     <div class="col" style="margin-top: 10px;">
@@ -231,7 +302,7 @@
                         <!-- <button class="btn btn-md btn-outline-dark" type="submit">검색</button> -->
                         <button class="btn_btn-sm" type="submit" id="search_btn">검색</button>
                     </div>
-                    
+
                 </div>
                 {% if q %}
                         <div class = "result">'{{ q }}' 검색 결과입니다.</h5>
@@ -240,7 +311,7 @@
         </div>
     </form>
 </div>
-
+<div class="list">
 <table cellspacing=1 width=700  class = "qna_table">
     <thead class="qna_thead">
         <tr class="text-center">
@@ -271,7 +342,7 @@
         {% endif %}
     </tbody>
 </table>
-
+</div>
 
 {% if is_paginated %}
 <div class = "page_content">

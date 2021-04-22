@@ -107,13 +107,13 @@
             padding-bottom: 50px;
         }
         .notdet{
-            width:700px;
             height:900px;
             margin:auto;
         }
         .notdet_btn{
-            padding-top: 70px;
-            text-align: center;
+    padding-top: 220px;
+    text-align: center;
+    float: right;
         }
         .btn1,
         .btn2{
@@ -141,10 +141,9 @@
             width:100px;
         }
         .body_content div:nth-child(2){
-            width:400px; 
+            width:400px;
         }
         .content_title{
-            font-weight: bold;
             font-size:22px;
             float:left;
         }
@@ -152,6 +151,76 @@
             font-size:20px;
         }
         </style>
+      <style>
+   .topCon{
+    background: white;
+    width: 1578px;
+    height: 111px;
+   }
+   .topCon h5{
+    font-size: 72px;
+    font-family: Impact;
+    color: rgb(43, 116, 191);
+    background: white;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 600px;
+    letter-spacing: 14px;
+   }
+   .susubNav01{
+	  margin: 0;
+    margin-left: 86px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 31px;
+    font-family: NanumSquareround;
+    text-decoration: none;
+   }
+   #susubnav a{
+	  margin: 0;
+    margin-left: 86px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 31px;
+    font-family: NanumSquareround;
+    text-decoration: none;
+   }
+   .notdet_wrap{
+    border-radius: 5px;
+    background-color: rgb(248,243,243);
+    box-shadow: 0px 10px 6.58px 0.42px rgb(0 0 0 / 35%);
+    width: 1500px;
+    height: 753px;
+    margin-left: 37px;
+   }
+   .themeColor{
+     color: rgba(255, 255, 255, 1);
+     height: 27px;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+     position: absolute;
+     width: inherit;
+    }
+    .notdet_body{
+     padding: 23px;
+     padding-top: 48px;
+    }
+    .body_content{
+     padding: 17px;
+     font-size: 22px;
+     padding-top: 23px;
+     padding-left: 23px;
+     border-bottom: 1.2px solid #dddd;
+    }
+    .notdet{
+     margin-top: 35px;
+    }
+    .content_title{
+     font-size: 27px;
+     font-family: NanumSquareround;
+     color: #b4b4b9;
+    }
+      </style>
     </head>
     <body>
         <!-- 전체 페이지 -->
@@ -183,22 +252,28 @@
         </div>
     </div>
     <div class="notdet">
-        <div class="notdet_head">
-            <label>NOTICE</label>
-        </div>
+      <div class="topCon">
+        <h5>NOTICE</h5>
+      </div>
+<!--        <div class="notdet_head">-->
+<!--            <label>NOTICE</label>-->
+<!--        </div>-->
+      <div class="notdet_wrap">
+        <div class="themeColor" style="background: #316396;"></div>
         <div class="notdet_body">
-            <div class=body_content><div class=content_title>제목</div><div class=content_body>{{notice.title}}</div></div>
-            <div class=body_content><div class=content_title>작성자</div><div class=content_body>관리자</div></div>
-            <div class=body_content><div class=content_title>내용</div><div class=content_body><pre>{{notice.content}}</pre></div></div>
-            {% if notice.image %} <div class=body_content><div class=content_title>이미지</div> <div class=content_body><img src ="{{ notice.image.url }}" alt = "{{notice.image}}"> </br> {{notice.image}}</div> {% endif %}</div>
-            <div class=body_content><div class=content_title>조회수</div><div class=content_body>{{notice.hits}}</div></div>
-            <div class=body_content><div class=content_title>등록일</div><div class=content_body>{{notice.create_at}}</div></div>
+            <div class=body_content><div class=content_title>Title</div><div class=content_body>{{notice.title}}</div></div>
+            <div class=body_content><div class=content_title>Writer</div><div class=content_body>관리자</div></div>
+            <div class=body_content><div class=content_title>Contents</div><div class=content_body><pre>{{notice.content}}</pre></div></div>
+            {% if notice.image %} <div class=body_content><div class=content_title>Image</div> <div class=content_body><img src ="{{ notice.image.url }}" alt = "{{notice.image}}"> </br> {{notice.image}}</div> {% endif %}</div>
+            <div class=body_content><div class=content_title>Views</div><div class=content_body>{{notice.hits}}</div></div>
+            <div class=body_content><div class=content_title>Date</div><div class=content_body>{{notice.create_at}}</div></div>
+          </div>
             <div class="notdet_btn">
                 <input type=button class = "btn1" value="List" OnClick="window.location='/notice/notice'">
                 <input type=button class = "btn2"value="Main" OnClick="window.location='/notice'">
             </div>
         </div>
-</div>    
+</div>
 </div>
 </body>
 </html>

@@ -31,8 +31,8 @@
         }
         #topCon{
           background: white;
-          width: 1578px;
-          height: 111px;
+          width: 1583px;
+          height: 56px;
         }
         #search_btn{
            position: absolute;
@@ -93,7 +93,7 @@
             text-align: center;
             padding-top: 40px;
             letter-spacing: 8px;
-            
+
         }
 #subnav h5:first-child {
     padding-top: 20px;
@@ -150,13 +150,33 @@
             color: black;
         }
     </style>
+  <style>
+    #liveBox02 h3{
+     text-align: center;
+     font-size: 21px;
+     color: #1a4b7e;
+     margin-bottom: 20px;
+    }
+    #liveBox2_search{
+     width: 100%;
+     border-top: 1px solid #dddd;
+     }
+    #liveBox2_search tr{
+     border-bottom: 2px solid rgb(204, 204, 204);
+     text-align: center;
+     }
+    #liveBox2_search th{
+     font-size: 18px;
+     color: #2983e0;
+     }
+  </style>
 </head>
 <body>
 <!-- 전체 페이지 -->
 
 <!-- git add 안될때 명령어
 
-    git config --global core.autocrlf true 
+    git config --global core.autocrlf true
 
 -->
 
@@ -194,7 +214,7 @@
                     <span class="icon"></span>
                 </button> -->
                 <!-- ↑ 이곳이 기존 검색창 ↑ -->
-                
+
 
             </div>
             <div id="mainCon">
@@ -212,18 +232,17 @@
                                 height:361px;"></iframe>-->
                     </div>
                     <div id="liveBox02">
-                        <h3 style="margin: 0 auto; color: #1a4b7e; font-size: 19pt;
-                        border-bottom: 2px solid #2b74bf;">실시간 검색어</h3>
-                        <table style ="width: 100%;">
+                        <h3>TRENDY RANKING</h3>
+                        <table id="liveBox2_search">
                             <tr style="border-bottom: 2px solid rgb(204, 204, 204);">
-                                <th>순위</th>
-                                <th>검색어</th>
-                                <th>검색횟수</th>
-                                                                
+                                <th>Rank</th>
+                                <th>Search Word</th>
+                                <th>Counts</th>
+
                             </tr>
                             <!--td : 임시데이터 -> 백에서 연결 요청함.-->
                             {% for list in Rank %}
-                            <tr style="border-bottom: 1px solid rgb(222, 217, 217);">
+                            <tr style="border-bottom: 1px solid rgb(222, 217, 217); text-align: center;">
                                 <td>{{forloop.counter}}</td>
                                 <td>{{list.keyword}}</td>
                                 <td>{{list.hits}}</td>
@@ -244,7 +263,7 @@
     box-shadow: 0px 8px 12.35px 0.65px rgba(0, 0, 0, 0.35);
 ">
                     <h3 style="margin: 0 auto; color: #1a4b7e; font-size: 19pt;
-                    border-bottom: 2px solid #2b74bf;">이번주 인기 게시물</h3>
+                    border-bottom: 2px solid #2b74bf;">이번주 Hot 게시물</h3>
                     <table style ="width: 100%;">
                         <tr style="border-bottom: 2px solid rgb(204, 204, 204);">
                             <th>NO</th>

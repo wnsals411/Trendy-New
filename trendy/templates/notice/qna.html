@@ -100,7 +100,6 @@
             right: 30px;
         }
         .body1{
-            width:700px;
             height:900px;
             margin:auto;
         }
@@ -141,9 +140,11 @@
             font-size:16px;
             border:white;
             cursor: pointer;
+            margin-right: 30px;
+            margin-top: 10px;
         }
         .button_content{
-           
+
             text-align:right;
             padding-top:10px;
         }
@@ -167,7 +168,7 @@
             display: inline-block;
         }
         .page_content{
-            
+
             text-align: center;
         }
         .page_content a {
@@ -177,8 +178,81 @@
         }
         .page_content a:hover{
             text-decoration-line: underline;
-        } 
+        }
         </style>
+      <style>
+.body1{
+	position: relative;
+	margin-top: -10px;
+}
+.susubNav01{
+	    margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+            text-decoration: none;
+        }
+#susubnav a{
+	    margin: 0;
+            margin-left: 86px;
+            padding-top: 10px;
+            color: gray;
+            font-size: 31px;
+            font-family: NanumSquareround;
+            text-decoration: none;
+        }
+.list{
+    border-radius: 5px;
+    background-color: rgb(248,243,243);
+    box-shadow: 0px 10px 6.58px 0.42px rgb(0 0 0 / 35%);
+    width: 1500px;
+    height: 753px;
+    margin-left: 37px;
+}
+
+.bold_td{
+    font-size: 22px;
+    color: rgb(43,116,191);
+    text-align: center;
+}
+
+.qna_title {
+	text-align: center;
+}
+
+.qna_table{
+    width: 100%;
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+.col{
+     margin-top: 8px;
+     float: right;
+     margin-right: 30px;
+}
+.topCon{
+    background: white;
+    width: 1578px;
+    height: 111px;
+}
+
+.topCon h5{
+    font-size: 72px;
+    font-family: Impact;
+    color: rgb(43, 116, 191);
+    background: white;
+    margin-bottom: 0px;
+    margin-top: 64px;
+    margin-left: 600px;
+    letter-spacing: 14px;
+}
+.pagination{
+    font-size: 15px;
+}
+      </style>
         </head>
         <body>
             <div id="wrap">
@@ -208,7 +282,9 @@
         </div>
     </div>
     <div class=body1>
-        <div class=qna_title><label>게시글 -- {{Total}}개</label></div>
+        <div class="topCon">
+          <h5>Q&A LIST</h5></div>
+        <div class=qna_title></div>
         <div style="margin-top: 30px;">
             <form action="" method="GET">
                 <div class="col">
@@ -240,14 +316,15 @@
                 </div>
             </form>
         </div>
+      <div class="list">
 <table cellspacing=1 width=700 class = "qna_table">
     <thead class="qna_thead">
         <tr class="text-center">
-            <td class  ="bold_td" width=50>번호</td>
-            <td class  ="bold_td" width=320>제목</td>
-            <td class  ="bold_td"width=100>작성자</td>
-            <td class  ="bold_td"width=100>등록일</td>
-            <td class  ="bold_td"width=100>조회수</td>
+            <td class  ="bold_td" width=50>No.</td>
+            <td class  ="bold_td" width=320>Title</td>
+            <td class  ="bold_td"width=100>Writer</td>
+            <td class  ="bold_td"width=100>Date</td>
+            <td class  ="bold_td"width=100>Views</td>
         </tr>
     </thead>
     <tbody>
@@ -285,7 +362,7 @@
         {% endif %}
     </tbody>
 </table>
-
+</div>
 <div class = "button_content"><input type=button class = "write_btn" value="글쓰기" OnClick="window.location='/notice/write'"></div>
 <div class = "page_content">
 {% if is_paginated %}
