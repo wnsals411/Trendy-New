@@ -13,11 +13,18 @@ def main(request):
     Hot_QNA = Qna.objects.filter(create_at__gte=timezone.now()-datetime.timedelta(days=7)).order_by('-hits')[0:4]
     # QNA 게시물 조회수 순 4개 (현재날짜부터 7일까지 데이터중)
     Rank = search_word.objects.order_by('-hits')[0:10] # 랭킹 10개 검색횟수 많은순
+    time1 = timezone.now()
+    time7 = timezone.now()-datetime.timedelta(days=7)
+
 
     return render(request, 'main/main.html', {
         # 'MainNotice':Main_Notice, 
         'Rank':Rank,
         'HotQNA':Hot_QNA,
+
+        'time1' : time1,
+        'time7' : time7,
+
         })
 
 class SearchView(ListView): # 게시글
