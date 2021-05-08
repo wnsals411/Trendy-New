@@ -111,9 +111,10 @@
             margin:auto;
         }
         .notdet_btn{
-    padding-top: 220px;
+    padding-top: 60px;
     text-align: center;
     float: right;
+    padding-right: 40px;
         }
         .btn1,
         .btn2{
@@ -263,7 +264,7 @@
         <div class="notdet_body">
             <div class=body_content><div class=content_title>Title</div><div class=content_body>{{notice.title}}</div></div>
             <div class=body_content><div class=content_title>Writer</div><div class=content_body>관리자</div></div>
-            <div class=body_content><div class=content_title>Contents</div><div class=content_body><pre>{{notice.content}}</pre></div></div>
+            <div class=body_content><div class=content_title>Contents</div><div class=content_body style="min-height: 350px;"><br><pre>{{notice.content}}</pre></div></div>
             {% if notice.image %} <div class=body_content><div class=content_title>Image</div> <div class=content_body><img src ="{{ notice.image.url }}" alt = "{{notice.image}}"> </br> {{notice.image}}</div> {% endif %}</div>
             <div class=body_content><div class=content_title>Views</div><div class=content_body>{{notice.hits}}</div></div>
             <div class=body_content><div class=content_title>Date</div><div class=content_body>{{notice.create_at}}</div></div>

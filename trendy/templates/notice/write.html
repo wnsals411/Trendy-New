@@ -100,8 +100,6 @@
             right: 30px;
         }
         .write{
-            width:700px;
-            height:900px;
             margin:auto;
         }
         .write_head{
@@ -120,14 +118,17 @@
         .password{
             font-size:35px;
             text-indent: 5px;
-            margin-left: 8px;
+          margin-left: 11px;
             border-radius: 5px;
-            box-shadow: 0px 4px 8px 0.42px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 4px 8px 1.45px rgb(0 0 0 / 35%);
+          width: 1340px;
+          padding-top: 3px;
+          padding-bottom: 3px;
         }
         .fieldWrapper{
             padding-top:30px;
         }
-        .main_title{ 
+        .main_title{
             font-size:65px;
         }
         .btn_div{
@@ -148,8 +149,71 @@
         .write_btn{
             margin-right: 20px;
         }
-        
+
         </style>
+      <!--수정 및 추가 코드-->
+      <style>
+        .main_title{
+         font-size: 72px;
+         color: rgb(16,116,191);
+         font-family: Impact;
+         letter-spacing: 11px;
+        }
+        .write_body{
+         background: rgb(248, 243, 243);
+         width: 1500px;
+         border-radius: 5px;
+         padding-left: 20px;
+         padding-right: 20px;
+         padding-top: 25px;
+         height: 790px;
+         box-shadow: 0px 10px 6.58px 0.42px rgb(0 0 0 / 35%)
+        }
+   .susubNav01{
+	  margin: 0;
+    margin-left: 86px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 31px;
+    font-family: NanumSquareround;
+    text-decoration: none;
+   }
+   #susubnav a{
+	  margin: 0;
+    margin-left: 86px;
+    padding-top: 10px;
+    color: gray;
+    font-size: 31px;
+    font-family: NanumSquareround;
+    text-decoration: none;
+   }
+        .btn_div{
+         float: right;
+        }
+        .filed_title{
+         font-size: 30px;
+         color: darkgray;
+         font-family: NanumSquareround;
+         padding-left: 12px;
+        }
+
+
+    <!--.filedWrapper 스타일은 프론트에서 코드가 안보여서 백에서 적용해주셔야 할 것 같습니다. 아래 코드 작성합니다.
+      title filedWrapper 스타일
+         border-top: 1px solid gray; padding-top: 12px; border-bottom: 1px solid gray; padding-bottom: 11px;
+      writer filedWrapper 스타일
+         padding-top: 12px; padding-bottom: 11px; border-bottom: 1px solid gray;
+      contents filedWrapper 스타일
+         padding-top: 30px; padding-bottom: 30px;
+      image filedWrapper 스타일
+         padding-top: 12px; padding-bottom: 11px; border-top: 1px solid gray; border-bottom: 1px solid gray;
+      password filedWrapper 스타일
+         padding-top: 12px; padding-bottom: 11px; border-bottom: 1px solid gray;
+    -->
+
+
+      </style>
+
     </head>
     <body>
 <!-- 전체 페이지 -->
@@ -184,7 +248,7 @@
     <form action="{% url 'notice:write' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="write_head">
-            <label class = "main_title">글쓰기</label>
+            <label class = "main_title">Write</label>
         </div>
         <div class="write_body">
             {% for filed in form %}
