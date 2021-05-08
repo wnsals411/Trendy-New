@@ -18,14 +18,14 @@ text-decoration: none;
 color: #f1ecec;
 }
 #searchbar{
-height: 25px;
+height: 41px;
 width: 810px;
 margin-top: 55px;
 padding: 10px;
 border: 0;
 background: #f1ecec;
 text-align: center;
-margin-left: 20%;
+margin-left: 27%;
 border-radius: 5px;
 }
 #mainCon{
@@ -58,3 +58,10 @@ margin-top: 15px;
 margin-bottom: 0px;
 color: white;
 }
+#search_btn{
+    height: 48px;
+    margin-top: 54px;
+    border-radius: 5px;
+    margin-left: -15px;
+    width: 55px;
+    }
