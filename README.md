@@ -4,7 +4,7 @@
 - **Python3** 와 **Django**를 통해 제작한 웹페이지입니다.
 - 실시간으로 DB에 따라 실시간 검색어, 인기 게시물 순위가 변경되는 **동적인 웹사이트**이며,
 - **AWS EC2 Ubuntu Linux 18.08** 버전에서 작업했습니다. ✅
-- **RESTful API** 형식을 준수했습니다. ✅
+- **RESTful API** 형식을 준수했습니다. ✅ </br>
  (***https://github.com/wnsals411/Trendy-New/blob/main/trendy/notice/urls.py***)
 </br>
 <img width="1427" alt="스크린샷 2021-12-30 오후 5 06 54" src="https://user-images.githubusercontent.com/78847555/147734397-45620ae4-8bc6-442c-997b-6c9575cad706.png">
